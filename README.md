@@ -23,4 +23,4 @@ E.g. encrypt(‘zzz’,1) would return ‘aaa’.
 
 ### Tests
 
-I have 5 tests. All are passing. 
+All required tests are passing
