@@ -35,3 +35,37 @@ def test_with_whitespace():
     expected = "bqqmft boe cbobobt"
     assert actual == expected
 
+
+# @pytest.mark.skip("TODO")
+def test_with_non_alpha():
+    actual = encrypt("Gimme a 1!", 1)
+    expected = "Hjnnf b 1!"
+    assert actual == expected
+
+
+# @pytest.mark.skip("TODO")
+def test_round_trip():
+    original = "Gimme a 1!"
+    shift = 5
+    encrypted = encrypt(original, shift)
+    actual = decrypt(encrypted, shift)
+    expected = original
+    assert actual == expected
+
+
+# @pytest.mark.skip("TODO")
+def test_crack_phrase():
+    phrase = "It was the best of times, it was the worst of times."
+    encrypted = encrypt(phrase, 10)
+    actual = crack(encrypted)
+    expected = phrase
+    assert actual == expected
+
+
+# @pytest.mark.skip("TODO")
+def test_crack_nonsense():
+    phrase = "Ix fhw txe fofg of ndhrl, it nad tho hndrk of allkd."
+    encrypted = encrypt(phrase, 10)
+    actual = crack(encrypted)
+    expected = ""
+    assert actual == expected
